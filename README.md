@@ -19,22 +19,22 @@ A class should have one, and only one, reason to change. This means that a class
 ```dart
 // Before applying SRP
 class Invoice {
-  void calculateTotal() { /* ... */ }
-  void printInvoice() { /* ... */ }
-  void saveToDatabase() { /* ... */ }
+  void calculateTotal() {}
+  void printInvoice() {}
+  void saveToDatabase() {}
 }
 
 // After applying SRP
 class Invoice {
-  void calculateTotal() { /* ... */ }
+  void calculateTotal() {}
 }
 
 class InvoicePrinter {
-  void printInvoice(Invoice invoice) { /* ... */ }
+  void printInvoice(Invoice invoice) {}
 }
 
 class InvoiceRepository {
-  void saveToDatabase(Invoice invoice) { /* ... */ }
+  void saveToDatabase(Invoice invoice) {}
 }
 
 
@@ -48,11 +48,11 @@ Software entities should be open for extension but closed for modification. This
 ```dart
 // Before applying OCP
 class Rectangle {
-  void draw() { /* ... */ }
+  void draw() {}
 }
 
 class Circle {
-  void draw() { /* ... */ }
+  void draw() {}
 }
 
 // After applying OCP
@@ -62,12 +62,12 @@ abstract class Shape {
 
 class Rectangle extends Shape {
   @override
-  void draw() { /* ... */ }
+  void draw() {}
 }
 
 class Circle extends Shape {
   @override
-  void draw() { /* ... */ }
+  void draw() {}
 }
 ```
 ---
@@ -79,7 +79,7 @@ Objects of a superclass should be replaceable with objects of a subclass without
 ```dart
 // Before applying LSP
 class Bird {
-  void fly() { /* ... */ }
+  void fly() {}
 }
 
 class Ostrich extends Bird {
@@ -100,7 +100,7 @@ class Sparrow extends Bird {
     fly();
   }
   
-  void fly() { /* ... */ }
+  void fly() {}
 }
 
 class Ostrich extends Bird {
@@ -109,7 +109,7 @@ class Ostrich extends Bird {
     run();
   }
   
-  void run() { /* ... */ }
+  void run() {}
 }
 
 ```
@@ -137,15 +137,15 @@ abstract class Eatable {
 
 class Robot implements Workable {
   @override
-  void work() { /* ... */ }
+  void work() {}
 }
 
 class Human implements Workable, Eatable {
   @override
-  void work() { /* ... */ }
+  void work() {}
   
   @override
-  void eat() { /* ... */ }
+  void eat() {}
 }
 ```
 ---
@@ -157,7 +157,7 @@ High-level modules should not depend on low-level modules. Both should depend on
 ```dart
 // Before applying DIP
 class MySQLConnection {
-  void connect() { /* ... */ }
+  void connect() {}
 }
 
 class PasswordReminder {
@@ -173,7 +173,7 @@ abstract class DatabaseConnection {
 
 class MySQLConnection implements DatabaseConnection {
   @override
-  void connect() { /* ... */ }
+  void connect() {}
 }
 
 class PasswordReminder {
