@@ -36,3 +36,36 @@ class InvoicePrinter {
 class InvoiceRepository {
   void saveToDatabase(Invoice invoice) { /* ... */ }
 }
+
+
+
+---
+
+## 2. Open/Closed Principle (OCP)
+Software entities should be open for extension but closed for modification. This means you should be able to add new functionality without changing existing code.
+
+### Example
+```dart
+// Before applying OCP
+class Rectangle {
+  void draw() { /* ... */ }
+}
+
+class Circle {
+  void draw() { /* ... */ }
+}
+
+// After applying OCP
+abstract class Shape {
+  void draw();
+}
+
+class Rectangle extends Shape {
+  @override
+  void draw() { /* ... */ }
+}
+
+class Circle extends Shape {
+  @override
+  void draw() { /* ... */ }
+}
