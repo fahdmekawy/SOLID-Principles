@@ -38,7 +38,7 @@ class InvoiceRepository {
 }
 
 
-
+```
 ---
 
 ## 2. Open/Closed Principle (OCP)
